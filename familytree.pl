@@ -1,10 +1,4 @@
-%	CALIFORNIA STATE UNIVERSITY, BAKERSFIELD
-%	CMPS 456 ADVANCED AI 
-%	LAB 1: INTRODUCTION TO PROLOG AND KINSHIP
-%	Based on (Quinlan 90). Family tree and kinship of
-% 	House Stark
-%
-%	Version 2, updated 4/1/15
+%	Based on (Quinlan 90). Family tree and kinship of House Stark
 
 husband( eddard, catelyn_tully ).
 husband( edwyle, marna_locke ).
@@ -35,9 +29,6 @@ parent( melantha_blackwood, edwyle ).
 parent( melantha_blackwood, jocelyn ).
 parent( rodrik, lyarra ).
 parent( arya_flint, lyarra ).
-
-
-
 parent( rodrik, lyarra ).
 
 /* Relationships */
