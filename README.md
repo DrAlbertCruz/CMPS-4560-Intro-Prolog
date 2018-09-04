@@ -142,7 +142,7 @@ solve(A,B,C,D) :- change_state(A,B,C,D,W,X,Y,Z),
 
 Note that the first sentence is the ground term. We will frame this problem recursively. Using `assertz` will keep track of what states we have visited by dynamically inserting facts into Prolog's database. This way, we can keep track of what states we have visited. After the search is finished, we can look up what states DFS has visited with `listing`. Because each clause is visited in order, if <check if illegal> is false, the rest of the rule will not fire, so rules which result in invalid moves will not be pushed to the knowledgebase. In the following, we step through each clause in depth.
 
-# Defining the actions
+## Defining the actions
 
 How do you get Prolog to explore a state? Prolog will automatically explore all possible movements if you query solve with variables. It will search all possibilities (remember the from 3560?), so the task for us is defining how Prolog can "move". Consider what is happening: a constant is switching from west to east. It should be framed like this:
 
@@ -165,7 +165,7 @@ change_state(w,w,X,Y,e,e,X,Y).
 
 Repeat this for all possible actions. The farmer can only take one "companion" with him in the boat at once. Define all the rules for movement before moving on to the next section.
 
-# Defining legality of actions
+## Defining legality of actions
 
 Now consider the code to check if a state (e.g., w,w,w,w or w,e,e,w) is legal or illegal. There are many legal moves, so we should instead focus on defining illegal states. An example:
 
@@ -175,7 +175,7 @@ illegal(w,e,e,_).
 
 This makes it illegal to have the wolf and the goat on the east side together (the second position is the wolf; the third, the goat). Thus, this state is illegal because the wolf would eat the goat. Complete all illegal states before moving on.
 
-# Agent function that searches for legal moves
+## Agent function that searches for legal moves
 
 Once you've completed the sections above you should be able perform a search within the space. The full solve command is as follows:
 
